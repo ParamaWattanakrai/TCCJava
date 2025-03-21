@@ -12,13 +12,12 @@ public class TCC {
     private static final List<Character> FRONT_VOWELS = List.of(
         'เ', 'แ', 'โ', 'ไ', 'ใ'
     );
-    private static final List<Character> REAR_CHARS = List.of(
-        'ิ', 'ี', 'ึ', 'ื', '็',
-        'ุ', 'ู', 'ำ',
+    private static final List<Character> AFTER_REQUIRED = List.of(
+        'ั', '็',
         '่', '้', '๊', '๋'
     );
     private static final List<Character> ENDING_CHARS = List.of(
-        'ะ', '์'
+        'ะ', '์', ' ', 'ๆ', 'ฯ'
     );
 
     private States currentState;
@@ -37,6 +36,7 @@ public class TCC {
                 if (CONSONANTS.contains(input)) currentState = States.CONSONANT;
                 break;
             case CONSONANT:
+                if (AFTER_REQUIRED.contains(input)) currentState = States.START;
                 if (FRONT_VOWELS.contains(input) || CONSONANTS.contains(input)) currentState = States.ENDBEFORE;
                 if (ENDING_CHARS.contains(input)) currentState = States.END;
             default:
