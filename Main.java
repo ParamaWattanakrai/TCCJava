@@ -3,7 +3,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        // String text = "เครื่องรางของขลังวัดโบสถ์พันธุ์แท้";
+        String text = "เครื่องรางของขลังวัดโบสถ์พันธุ์แท้";
         // String text = "หอมรดกไทย";
         // String text = "เรือน้อยลอยอยู่";
         // String text = "ประกันภัยสัมพันธ์";
