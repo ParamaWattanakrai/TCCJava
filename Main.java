@@ -3,8 +3,11 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        String text = "เครื่องรางของขลังวัดโบสถ์ดอนพรหม";
+        // String text = "หอมรดกไทย";
         // String text = "เรือน้อยลอยอยู่";
-        String text = "เลิกงานไวจะกลับบ้าน";
+        // String text = "ประกันภัยสัมพันธ์";
+        // String text = "ตากลม";
         String splitText = "";
         TCC fsm = new TCC();
         for (int i = 0; i < text.length(); i++) {
