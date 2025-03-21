@@ -12,7 +12,7 @@ public class Main {
         String splitText = TCC.split(text);
 
         try (FileWriter writer = new FileWriter("output.txt")) {
-            writer.write("Split Text: " + splitText);
+            writer.write("Original Text: " + text + "\nSplit Text: " + splitText);
         } catch (IOException e) {
             e.printStackTrace();
         }
