@@ -3,15 +3,18 @@ import java.io.IOException;
 
 public class TCC {
     public static String split(String text) {
+        text += "     ";
         String splitText = "";
         String log = "";
         FSM fsm = new FSM();
         for (int i = 0; i < text.length(); i++) {
-            log += "consider: " + text.charAt(i);
-            System.out.print("consider: " + text.charAt(i));
             fsm.transition(text.charAt(i));
+
+            log += "consider: " + text.charAt(i);
             log += ", transition to: " + fsm.getCurrentState() + "\n";
-            System.out.print(", transition to: " + fsm.getCurrentState() + "\n");
+            // System.out.print("consider: " + text.charAt(i));
+            // System.out.print(", transition to: " + fsm.getCurrentState() + "\n");
+
             splitText += text.charAt(i);
             try (FileWriter writer = new FileWriter("log.txt")) {
                 writer.write(log);
@@ -52,6 +55,7 @@ public class TCC {
                 continue;
             }
         }
+        splitText = splitText.trim();
         try (FileWriter writer = new FileWriter("log.txt")) {
             writer.write(log);
         } catch (IOException e) {

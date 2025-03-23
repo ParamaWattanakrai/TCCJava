@@ -1,2 +1,2 @@
 Original Text: หอมรดกไทย
-Split Text: ห อ ม ร ด ก ไทย
+Split Text: ห อ ม ร ด ก ไท ย
