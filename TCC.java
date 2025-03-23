@@ -9,6 +9,7 @@ public class TCC {
         FSM fsm = new FSM();
         for (int i = 0; i < text.length(); i++) {
             fsm.transition(text.charAt(i));
+            splitText.append(text.charAt(i));
 
             log.append("considering: ").append(text.charAt(i))
             .append(", transition to: ").append(fsm.getCurrentState()).append("\n");
