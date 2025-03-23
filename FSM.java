@@ -59,19 +59,18 @@ public class FSM {
                 break;
             case XCC:
                 if (input == '์') { currentState = States.END0; return; }
-                if (CONSONANTS.contains(input)) { currentState = States.END3; return; }
                 if (input == 'ิ' || input == 'ุ') { currentState = States.XCCV; return; }
                 currentState = States.END3;
                 System.out.println("WHAT XCC");
                 break;
             case XCV:
                 if (input == '์') { currentState = States.END0; return; }
-                if (CONSONANTS.contains(input)) { currentState = States.END3; return; }
+                currentState = States.END3;
                 System.out.println("WHAT XCV");
                 break;
             case XCCV:
                 if (input == '์') { currentState = States.END0; return; }
-                if (CONSONANTS.contains(input)) { currentState = States.END4; return; }
+                currentState = States.END4;
                 System.out.println("WHAT XCCV");
                 break;
             
