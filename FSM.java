@@ -100,7 +100,7 @@ public class FSM {
             case CONSONANT:
                 if (CONSONANTS.contains(input)) { currentState = States.XC; return; }
                 if (UPPER_LOWER_VOWELS.contains(input)) { currentState = States.SARA_I_U; return; }
-                if (input == 'า') { currentState = States.X2; return; }
+                if (input == 'า' || input == 'ำ') { currentState = States.X2; return; }
                 if (TONE_MARKERS.contains(input)) { currentState = States.WANNAYUK; return;}
                 if (input == 'ั') { currentState = States.SARA_A1; return; }
                 if (input == '็') { currentState = States.SARA_O; return; }
@@ -115,7 +115,7 @@ public class FSM {
                 if (FRONT_VOWELS.contains(input)) { currentState = States.END1; return; }
                 break;
             case WANNAYUK:
-                if (CONSONANTS.contains(input) || input == 'า') { currentState = States.X2; return; }
+                if (CONSONANTS.contains(input) || input == 'า' || input == 'ำ') { currentState = States.X2; return; }
                 System.out.println("WHAT WANNAYUK");
                 break;
             case SARA_A1:
@@ -160,6 +160,7 @@ public class FSM {
                 if (TONE_MARKERS.contains(input)) { currentState = States.MAINA2; return; }
                 if (input == 'ี') { currentState = States.SARA_IA; return; }
                 if (input == 'ี') { currentState = States.SARA_UEA; return; }
+                if (input == '็' || input == 'ิ') { currentState = States.FINAL_CONS_REQUIRED; return; }
                 if (FRONT_VOWELS.contains(input)) { currentState = States.END1; return; }
                 System.out.println("WHAT MAINA2");
                 break;
