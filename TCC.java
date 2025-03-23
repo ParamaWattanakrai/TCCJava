@@ -3,24 +3,17 @@ import java.io.IOException;
 
 public class TCC {
     public static String split(String text) {
-        text += "     "; // Ensure buffer space
+        text += "     ";
         StringBuilder splitText = new StringBuilder();
         StringBuilder log = new StringBuilder();
         FSM fsm = new FSM();
         for (int i = 0; i < text.length(); i++) {
             fsm.transition(text.charAt(i));
 
-            log.append("consider: ").append(text.charAt(i))
+            log.append("considering: ").append(text.charAt(i))
             .append(", transition to: ").append(fsm.getCurrentState()).append("\n");
             // System.out.print("consider: " + text.charAt(i));
             // System.out.print(", transition to: " + fsm.getCurrentState() + "\n");
-
-            splitText.append(text.charAt(i));
-            try (FileWriter writer = new FileWriter("log.txt")) {
-                writer.write(log.toString());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
             int rollback = switch (fsm.getCurrentState()) {
                 case END0 -> 0;
