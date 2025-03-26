@@ -13,8 +13,6 @@ public class TCC {
 
             log.append("considering: ").append(text.charAt(i))
             .append(", transition to: ").append(fsm.getCurrentState()).append("\n");
-            // System.out.print("consider: " + text.charAt(i));
-            // System.out.print(", transition to: " + fsm.getCurrentState() + "\n");
 
             int rollback = switch (fsm.getCurrentState()) {
                 case END0 -> 0;
