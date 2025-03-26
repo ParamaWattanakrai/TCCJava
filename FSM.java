@@ -159,7 +159,7 @@ public class FSM {
                 if (CONSONANTS.contains(input)) { currentState = States.XC; return; }
                 if (TONE_MARKERS.contains(input)) { currentState = States.MAINA2; return; }
                 if (input == 'ี') { currentState = States.SARA_IA; return; }
-                if (input == 'ี') { currentState = States.SARA_UEA; return; }
+                if (input == 'ื') { currentState = States.SARA_UEA; return; }
                 if (input == '็' || input == 'ิ') { currentState = States.FINAL_CONS_REQUIRED; return; }
                 if (FRONT_VOWELS.contains(input)) { currentState = States.END1; return; }
                 System.out.println("WHAT MAINA2");

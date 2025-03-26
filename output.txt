@@ -1,2 +1,2 @@
-Original Text: เดินเล่นริมน้ำทะเล
-Split Text: เดิน เล่ น ริ ม น้ำ ทะ เล
+Original Text: เเเเเล็กน้อย
+Split Text: เเเเเล็ก น้อ ย
